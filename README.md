@@ -1,2 +1,2 @@
 # akc-enose
-eNose sensor - ARTIK 530s - ARTIK Cloud
+eNose Sensor - ARTIK 530s - ARTIK Cloud demo project
