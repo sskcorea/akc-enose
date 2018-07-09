@@ -62,7 +62,7 @@ function senddata2akc(enose) {
 }
 
 function senddata2azure(enose) {
-    var data = JSON.stringify({ temperature: enose.temperature, humidity: enose.humidity });
+    var data = JSON.stringify({ temperature: enose.temperature, humidity: enose.humidity, acetone: enose.acetone, toluene: enose.toluene1 });
     var azure_message = new Message(data);
     console.log('azure> send message: ' + azure_message.getData());
     client.sendEvent(azure_message, printResultFor('send'));
