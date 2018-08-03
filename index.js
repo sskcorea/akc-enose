@@ -6,15 +6,16 @@ var enose = new Enose(1, 0x10);
 var Gpio = require('onoff').Gpio;
 var gpio = new Gpio(128, 'in', 'rising');
 
+var Config = require('./config.json');
+
 // azure cloud
-var connectionString = 'HostName=artik-test.azure-devices.net;DeviceId=a530s;SharedAccessKey=sNp80pyTv+4La2nyedfff/9LN6CEwWnCiWRUB6mgdws=';
+var connectionString = Config['connection_string'];
 var Mqtt = require('azure-iot-device-mqtt').Mqtt;
 var DeviceClient = require('azure-iot-device').Client
 var Message = require('azure-iot-device').Message;
 var client = DeviceClient.fromConnectionString(connectionString, Mqtt);
 
 // artik cloud
-var Config = require('./config.json');
 var ArtikCloud = require('artikcloud-js');
 var akc_client = ArtikCloud.ApiClient.instance;
 var artikcloud_oauth = akc_client.authentications['artikcloud_oauth'];
